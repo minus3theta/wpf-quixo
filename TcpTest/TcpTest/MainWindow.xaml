@@ -5,8 +5,39 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TcpTest"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="TcpTest" Height="350" Width="525">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid Margin="120,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <RadioButton x:Name="ModeServer" Content="Server" Margin="0" VerticalContentAlignment="Center"/>
+            <RadioButton x:Name="ModeClient" Content="Client" Grid.Column="1" Margin="0" VerticalContentAlignment="Center" IsChecked="True"/>
+            <RadioButton x:Name="ModeLocal" Content="Local" Grid.Column="2" Margin="0" VerticalContentAlignment="Center"/>
+        </Grid>
+        <Button x:Name="ButtonStart" Content="Start" Margin="0" Grid.Row="2" VerticalAlignment="Center" Width="75" HorizontalAlignment="Center"/>
+        <Grid Margin="0" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Label x:Name="label" Content="IP Address" HorizontalAlignment="Right" Margin="104,0,10,0" VerticalAlignment="Center"/>
+            <Label x:Name="label1" Content="Port (TCP)" HorizontalAlignment="Right" Margin="182,0,10,0" Grid.Row="1" VerticalAlignment="Center"/>
+            <TextBox x:Name="TextIp" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,0,0,0" TextWrapping="Wrap" Text="127.0.0.1" VerticalAlignment="Center" Width="120"/>
+            <TextBox x:Name="TextPort" Grid.Column="1" HorizontalAlignment="Left" Height="24" Margin="10,0,0,0" TextWrapping="Wrap" Text="7441" VerticalAlignment="Center" Width="120" Grid.Row="1"/>
+        </Grid>
+
     </Grid>
 </Window>
